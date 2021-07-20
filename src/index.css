@@ -1,4 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+@font-face {
+  font-family: "Lato";
+  src: url("fonts/Lato-Regular.ttf");
+}
+@font-face {
+  font-family: "Lato";
+  src: url("fonts/Lato-Bold.ttf");
+  font-weight: bold;
+}
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,7 +23,8 @@ body {
   background-color: rgb(247, 247, 247);
   color: rgba(15, 15, 15, 0.87);
   font-size: 1rem;
-  font-family: Roboto, Arial, sans-serif;
+  /* font-family: Roboto, Arial, sans-serif; */
+  font-family: Lato, Arial, sans-serif;
   line-height: 1.5rem;
   font-weight: 400;
   text-rendering: optimizelegibility;
@@ -23,8 +36,8 @@ html {
 
 h1 {
   background-color: #4158d0;
-  background-image: linear-gradient(43deg, #a162e8 0%, #f7ce68 46%, #85ffbd 100%);
-
+  /* background-image: linear-gradient(43deg, #a162e8 0%, #f7ce68 46%, #85ffbd 100%); */
+  background-image: linear-gradient(90deg, #a162e89c 0%, #85ffbd9c 75%, #ffffff 120%);
   background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -33,7 +46,8 @@ h1 {
 h3 {
   font-size: 1.4rem !important;
   background-color: #8e9ffa;
-  background-image: linear-gradient(45deg, #8e9ffa 0%, #f874ef 25%, #ffcc70 80%);
+  /* background-image: linear-gradient(45deg, #8e9ffa 0%, #f874ef 25%, #ffcc70 80%); */
+  background-image: linear-gradient(45deg, #a162e89c 0%, #85ffbd9c 75%, #ffffff 120%);
 
   background-clip: border-box;
   -webkit-background-clip: text;
@@ -78,7 +92,7 @@ textarea {
 
 .footer {
   width: 100%;
-  background-image: linear-gradient(35deg, #a162e8 0%, #f7ce68 46%, #85ffbd 100%);
+  background-image: linear-gradient(300deg, #a162e8e7 32%, #85ffbed3);
   height: 60px;
   text-align: center;
   font-weight: bold;
@@ -87,12 +101,15 @@ textarea {
 }
 
 .smob:hover{
-  background-image: linear-gradient(35deg, #a162e89c 0%, #f7cf689c 46%, #85ffbd9c 80%, #ffffff 100%);  
+  background-image: linear-gradient(35deg, #a162e89c 0%, #85ffbd9c 80%, #ffffff 100%);  
 }
 
 .chooser_screen{
-  background-color: #fcde92;
+  /* background-color: #fcde92; */
+  /* background-image: ; */
+  background-image: linear-gradient(300deg, #a162e8e7 32%, #85ffbed3);
   height: 100vh;
+  color: #ffffff;
   text-align: center;
   font-size: 27px;
   display: -webkit-box;
@@ -105,6 +122,40 @@ textarea {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+}
+
+.chooserbtn{
+  border: #ffffff solid;
+  border-radius: 20px;
+  border-width: 2px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 15px 15px 15px 15px;
+  width: 150px;
+  font-size: 20px;
+}
+
+.chooserbtn:hover{
+  background-color: #ffffff;
+  color: #333;
+}
+
+.chooser_me{
+  margin-top: 25px;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  border: #ffffff solid;
+  border-width: 10px;
+  /* padding: 3px; */
+}
+
+.chooserbtn_on:hover{
+  background-image: linear-gradient(98.49deg, #A0A0F8 7.28%, #DC8EF2 60.94%, #FB97BC 119.49%);
+}
+
+#contact{
+  margin-bottom: 4rem !important;
 }
 
 /* Loader */

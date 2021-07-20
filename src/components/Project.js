@@ -11,7 +11,7 @@ const Project = () => {
         <div className='my-7 space-y-24'>
           {projects.map((project, index) => (
             <article className='flex flex-wrap md:justify-between md:items-center' key={index}>
-              <picture className={index % 2 === 0 ? 'w-full md:w-6/12 shadow-lg ' : 'w-full md:w-6/12 shadow-lg md:order-1'}>
+              <picture className={index % 2 === 0 ? 'w-full md:w-6/12 shadow-lg ' : 'w-full md:w-6/12 shadow-lg md:order-1'} style={{ borderRadius: '30px' }}>
                 <source
                   srcSet={`${project.image}.webp 1920w,
                         ${project.image}.webp 768w,
@@ -21,10 +21,10 @@ const Project = () => {
                 />
                 <source srcSet={`${project.image}.jpg 768w,`} sizes='(min-width: 768px) 50vw, 100vw' type='image/jpg' />
 
-                <img width='768px' height='575px' loading='lazy' alt={project.title} className='rounded-lg' />
+                <img width='768px' height='575px' loading='lazy' alt={project.title} className='rounded-lg' onClick={() => {window.open(project.link, '_blank')}}/>
               </picture>
               <div className='flex flex-col overflow-auto  space-y-3 my-3 mx-1 w-full md:w-5/12 '>
-                <h3 className='uppercase font-bold text-lg'>{project.title}</h3>
+                <h3 className='uppercase font-bold text-lg' onClick={() => {window.open(project.link, '_blank')}}>{project.title}</h3>
                 <p dangerouslySetInnerHTML={{__html: project.description}}/>
                 <div className='flex overflow-auto space-x-3 pb-2'>
                   {project.tools.map((disc, index) => (
@@ -33,11 +33,11 @@ const Project = () => {
                     </span>
                   ))}
                 </div>
-                <div className='w-auto flex space-x-5 relative'>
+                {/* <div className='w-auto flex space-x-5 relative'>
                   <a href={project.link} className='border border-gray-500 rounded-lg px-2 py-1' target='_blank' rel='noreferrer'>
                     <img src='./images/icons/behance.svg' alt='link to live website' width='30px' height='30px' />
                   </a>
-                </div>
+                </div> */}
               </div>
             </article>
           ))}
