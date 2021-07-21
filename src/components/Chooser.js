@@ -29,7 +29,7 @@ const Chooser = (props) => {
               <img src={me}  style={{ borderRadius: '50%' }} alt="me"/>
             </div>
           </center>
-          <div style={{padding: '50px', fontSize: '25px'}}>For a better accoustic experience, turn on sounds</div>
+          <div style={{padding: '50px', fontSize: '25px'}}>For a better acoustic experience, turn on sounds</div>
           <div style={{ fontSize: '23px' }}>
               <button className="chooserbtn" onClick={() => props.chooseranswer(false)}>Hell Yeah !</button>
               <button className="chooserbtn" onClick={() => props.chooseranswer(true)}>Nope</button>
