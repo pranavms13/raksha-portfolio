@@ -1,5 +1,8 @@
 import React, { lazy, Suspense } from 'react';
 
+import { positions, Provider } from "react-alert";
+import AlertTemplate from "react-alert-template-basic";
+
 const Chooser = lazy(() => import('./components/Chooser'));
 const Header = lazy(() => import('./components/Header'));
 const Hero = lazy(() => import('./components/Hero'));
@@ -10,15 +13,15 @@ const Footer = lazy(() => import('./components/Footer'));
 
 
 class App extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      choosen : false,
-      muted : true
+      choosen: false,
+      muted: true
     }
     this.chooseranswer = this.chooseranswer.bind(this);
   }
-  componentDidMount(){
+  componentDidMount() {
     // let audio = document.getElementById("bgaudio");
     // audio.load();
     // // audio.play();
@@ -26,9 +29,9 @@ class App extends React.Component {
     //   audio.play();
     // });
   }
-  chooseranswer(option){
-    this.setState({choosen: true, muted: option});
-    if(!option){
+  chooseranswer(option) {
+    this.setState({ choosen: true, muted: option });
+    if (!option) {
       let audio = document.getElementById("bgaudio");
       audio.load();
       audio.play();
@@ -37,7 +40,11 @@ class App extends React.Component {
       });
     }
   }
-  render(){
+  render() {
+    const options = {
+      timeout: 5000,
+      position: positions.BOTTOM_CENTER
+    };
     return (
       <Suspense
         fallback={
@@ -51,19 +58,21 @@ class App extends React.Component {
       >
         {this.state.choosen &&
           <>
-          <div className='App container my-10 mx-auto max-w-screen-lg bg-black'>
-            <Header />
-            <main>
-              <Hero />
-              <Project />
-              <Skill />
-              <Contact />
-            </main>
-          </div>
-          <Footer/>
+            <Provider template={AlertTemplate} {...options}>
+              <div className='App container my-10 mx-auto max-w-screen-lg bg-black'>
+                <Header />
+                <main>
+                  <Hero />
+                  <Project />
+                  <Skill />
+                  <Contact />
+                </main>
+              </div>
+              <Footer />
+            </Provider>
           </>
         }
-        {!this.state.choosen && <Chooser chooseranswer={this.chooseranswer}/>}
+        {!this.state.choosen && <Chooser chooseranswer={this.chooseranswer} />}
       </Suspense>
     );
   }
