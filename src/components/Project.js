@@ -11,7 +11,7 @@ const Project = () => {
         <div className='my-7 space-y-24'>
           {projects.map((project, index) => (
             <article className='flex flex-wrap md:justify-between md:items-center' key={index}>
-              <picture className={index % 2 === 0 ? 'w-full md:w-6/12 shadow-lg ' : 'w-full md:w-6/12 shadow-lg md:order-1'} style={{ borderRadius: '30px' }}>
+              <picture className={index % 2 === 0 ? 'w-full md:w-6/12 shadow-lg ' : 'w-full md:w-6/12 shadow-lg md:order-1'} style={{ borderRadius: '30px', cursor: 'pointer' }} >
                 <source
                   srcSet={`${project.image}.webp 1920w,
                         ${project.image}.webp 768w,
@@ -24,7 +24,7 @@ const Project = () => {
                 <img width='768px' height='575px' loading='lazy' alt={project.title} className='rounded-lg' onClick={() => {window.open(project.link, '_blank')}}/>
               </picture>
               <div className='flex flex-col overflow-auto  space-y-3 my-3 mx-1 w-full md:w-5/12 '>
-                <h3 className='uppercase font-bold text-lg' onClick={() => {window.open(project.link, '_blank')}}>{project.title}</h3>
+                <h3 className='uppercase font-bold text-lg' style={{ cursor: 'pointer' }} onClick={() => {window.open(project.link, '_blank')}}>{project.title}</h3>
                 <p dangerouslySetInnerHTML={{__html: project.description}}/>
                 <div className='flex overflow-auto space-x-3 pb-2'>
                   {project.tools.map((disc, index) => (

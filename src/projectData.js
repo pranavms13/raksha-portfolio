@@ -31,6 +31,14 @@ const projects = [
     github: '',
     link: 'https://devfolio.co/submissions/fundngo-5f89',
   },
+  {
+    title: 'DeBuilds',
+    image: './images/debuilds',
+    description: "Debuilds is a decentralised Software Market place for devs/users to buy or sell software using NFTs. This web application has a unique dark theme, and is targeted to an audience that conducts transactions in Ethereum. The dark theme gives a different experience to its users who are either Developers or buyers. This is a project that my team and I worked on for the ETHOdyssey Hackathon and won prizes under Polygon and Filecoin tracks. I contributed as the UI designer for this project and I'm super happy with how it turned out.",
+    tools: ['Adobe Illustrator', 'Figma'],
+    github: '',
+    link: 'https://devfolio.co/submissions/debuilds-e369',
+  },
 ];
 
 export default projects;

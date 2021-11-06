@@ -91,12 +91,15 @@ textarea {
 }
 
 .footer {
-  width: 100%;
-  background-image: linear-gradient(300deg, #a162e8e7 32%, #85ffbed3);
+  /* width: 100%; */
+  /* background-image: linear-gradient(300deg, #a162e8e7 32%, #85ffbed3); */
+  background-color: #ffffff;
+  border-radius: 15px 15px 0px 0px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   height: 60px;
   text-align: center;
-  font-weight: bold;
-  letter-spacing: 2px;
+  justify-content: center;
+  letter-spacing: 1px;
   padding: 15px;
 }
 

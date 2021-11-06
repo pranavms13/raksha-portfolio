@@ -9,7 +9,8 @@ class Contact extends React.Component{
     this.state = {
       name: '',
       email: '',
-      message: ''
+      message: '',
+      sending: false
     }
     this.onSubmit = this.onSubmit.bind(this);
     this.cleartextbox = this.cleartextbox.bind(this);
@@ -26,6 +27,7 @@ class Contact extends React.Component{
 
   onSubmit(e) {
     e.preventDefault();
+    this.setState({ sending: true })
     // const name = e.target.name.value;
     // const email = e.target.email.value;
     // const message = e.target.message.value;
@@ -35,8 +37,10 @@ class Contact extends React.Component{
     axios.post('https://raksha-backend.vercel.app/', data).then((response) => {
       if (response.data.m === "success") {
         this.alert.success("Message Sent !");
+        this.setState({ sending: false })
         this.cleartextbox();
       } else {
+        this.setState({ sending: false })
         this.alert.error("Error : " + response.data.details)
       }
     }).catch((err) => {
@@ -96,7 +100,7 @@ class Contact extends React.Component{
               <input type='email' name='email' id='email' className='gradient' required onChange={(e) => this.setState({ email: e.target.value })} value={this.state.email}></input>
               <label htmlFor='message'>Message</label>
               <textarea name='message' id='message' cols='25' rows='5' className='gradient' required onChange={(e) => this.setState({ message: e.target.value })} value={this.state.message}></textarea>
-              <button type='submit' className='border border-gray-500 p-2 rounded-lg w-auto mr-auto shadow-md'>
+              <button type='submit' className='border border-gray-500 p-2 rounded-lg w-auto mr-auto shadow-md' disabled={this.state.sending}>
                 Send Message
               </button>
             </form>
