@@ -38,7 +38,7 @@ const projects = [
     tools: ['Adobe Illustrator', 'Figma'],
     github: '',
     link: 'https://devfolio.co/submissions/debuilds-e369',
-  },
+  }
 ];
 
 export default projects;
