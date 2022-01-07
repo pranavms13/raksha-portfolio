@@ -38,6 +38,14 @@ const projects = [
     tools: ['Adobe Illustrator', 'Figma'],
     github: '',
     link: 'https://devfolio.co/submissions/debuilds-e369',
+  },
+  {
+    title: 'Employ Chain',
+    image: './images/employchain',
+    description: "Employ Chain is a hiring platform that allows Employers to post job requirements and Employees to apply for these jobs. The project stands out from other hiring platforms due to it’s clutter-free User Interface and Consistency in components",
+    tools: ['Adobe Illustrator', 'Figma', 'Canva'],
+    github: '',
+    link: 'https://devfolio.co/submissions/debuilds-e369',
   }
 ];
 
